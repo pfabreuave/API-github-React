@@ -30,7 +30,7 @@ class App extends Component {
       );
       console.log(users)
       const { data: repos } = await axios.get(
-        `https://api.github.com/users/${user}/repos`
+        `https://api.github.com/users/${user}/repos?per_page=100`
       );
       this.setState({ users, repos, error: '', loading: false });
     } catch (error) {
